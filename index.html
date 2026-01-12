@@ -19,6 +19,7 @@
     h1 {
       font-size: 2.4em;
       margin-bottom: 0.2em;
+      margin-top: 0; /* Ajuste para alinear con la foto */
     }
 
     h2 {
@@ -39,28 +40,69 @@
     ul {
       margin-top: 0.5em;
     }
+
+    /* --- ESTILOS NUEVOS PARA LA FOTO --- */
+    .intro-container {
+      display: flex;           /* Pone los elementos lado a lado */
+      justify-content: space-between; /* Separa texto y foto */
+      align-items: flex-start; /* Alinea arriba */
+      gap: 40px;               /* Espacio entre texto y foto */
+      margin-bottom: 40px;
+    }
+
+    .intro-text {
+      flex: 1; /* El texto ocupa el espacio disponible */
+    }
+
+    .intro-photo img {
+      width: 250px;           /* Tamaño de la foto */
+      height: auto;
+      border-radius: 4px;     /* Bordes un poco redondeados (opcional) */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra suave para resaltar */
+    }
+
+    /* Versión para celulares (pantallas pequeñas) */
+    @media (max-width: 700px) {
+      .intro-container {
+        flex-direction: column-reverse; /* Pone la foto arriba del texto en móviles (o column normal) */
+        align-items: center;
+        text-align: center;
+      }
+      .intro-photo img {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<h1>Cristian Guanilo</h1>
+<div class="intro-container">
+  
+  <div class="intro-text">
+    <h1>Cristian Guanilo</h1>
+    <p>
+      Mathematics student interested in topology and dynamical systems.
+    </p>
+  </div>
 
-<p>
-Mathematics student interested in topology and dynamical systems.
-</p>
+  <div class="intro-photo">
+    <img src="foto_perfil.jpg" alt="Cristian Guanilo">
+  </div>
+
+</div>
 
 <h2>Contact</h2>
 <p>
-Email: <a href="mailto:cguanilo@pucp.edu.pe">cguanilo@pucp.edu.pe</a><br>
+  Email: <a href="mailto:cguanilo@pucp.edu.pe">cguanilo@pucp.edu.pe</a><br>
 </p>
 
 <h2>Research interests</h2>
 <ul>
   <li>Differential topology</li>
-  <li>Algebreic topology</li>
-
-</ul>
+  <li>Algebraic topology</li> </ul>
 
 <h2>Education</h2>
 <ul>
